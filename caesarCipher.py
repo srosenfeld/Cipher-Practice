@@ -2,6 +2,7 @@
 # https://www.nostarch.com/crackingcodes/
 
 import pyperclip
+import random
 
 # The string to be encrypted/decrypted:
 print("Enter a message to be encrypted or decrypted")
@@ -12,8 +13,7 @@ print("Type either 'encrypt' or 'decrypt' to choose encryption or decryption mod
 mode = input() # Set to either 'encrypt' or 'decrypt'
 
 # The encryption/decryption key:
-print("Set the 'key' number for encryption or decryption")
-key = int(input())
+key = random.randint(1,66)
 
 
 # Every possible symbol that can be encrypted:
