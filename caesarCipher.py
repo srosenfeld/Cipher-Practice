@@ -3,14 +3,10 @@
 
 import pyperclip
 import random
+import pyautogui
 
 # The string to be encrypted/decrypted:
-print("Enter a message to be encrypted or decrypted")
-message = input()
-
-# Whether the program encrypts or decrypts:
-print("Type either 'encrypt' or 'decrypt' to choose encryption or decryption mode.")
-mode = input() # Set to either 'encrypt' or 'decrypt'
+message = pyautogui.password(text="Input Caesar Cipher to be encrypted below.", title="Caesar Cipher", default="", mask="*")
 
 # The encryption/decryption key:
 key = random.randint(1,66)
@@ -27,11 +23,8 @@ for symbol in message:
     if symbol in SYMBOLS:
         symbolIndex = SYMBOLS.find(symbol)
 
-        # Perform encryption/decryption:
-        if mode == 'encrypt':
-            translatedIndex = symbolIndex + key
-        elif mode == 'decrypt':
-            translatedIndex = symbolIndex - key
+        # Perform encryption:
+        translatedIndex = symbolIndex + key
 
         # Handle wraparound, if needed:
         if translatedIndex >= len(SYMBOLS):

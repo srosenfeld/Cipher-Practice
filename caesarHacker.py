@@ -1,11 +1,13 @@
 # Caesar Cipher Hacker
 # https://www.nostarch.com/crackingcodes/
 
+import pyautogui
+
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
 
 
-print("Input caesar cipher to decrypt:")
-message = input()
+message = pyautogui.prompt(text="Input Caesar Cipher to be decrypted.", title="Caesar Hacker", default="")
+
 #Loop through every possible key
 
 for key in range(len(SYMBOLS)):
